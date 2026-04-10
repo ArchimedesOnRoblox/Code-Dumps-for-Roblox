@@ -1,0 +1,1 @@
+local a="WindShake"local b=game:GetService("CollectionService")local c={"Shrub","Bush","Foliage","Plant","Flower","Tree","Sapling","Fern","Grass"}for d,e in pairs(game.Workspace:GetDescendants())do for f,g in pairs(c)do if string.match(e.Name,g)and(e:IsA("Model")or e:IsA("BasePart")or e:IsA("Mesh"))then b:AddTag(e,a)break end end end
