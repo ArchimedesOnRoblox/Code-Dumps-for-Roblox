@@ -1,0 +1,28 @@
+-- YOOOOOOO WSG, it's arch, plz put the tag [ the man archimedes makes good tutorials and such ] in ur desc if u use one of these scripts, or gatekeep the sources u used for the game [don't claim ur a solo dev if u do this btw, it doesnt count] but put a nod to me in ur game, i want INFAMY dawg 💯
+
+-- Will Not Be Commented - WNBC script.
+
+local TagToAdd = "WindShake"
+
+local CollectionService = game:GetService("CollectionService")
+
+local ListOfObjects = {
+    "Shrub",
+    "Bush",
+    "Foliage",
+    "Plant",
+    "Flower",
+    "Tree",
+    "Sapling",
+    "Fern",
+    "Grass"
+}
+
+for i, ds in pairs(game.Workspace:GetDescendants()) do
+    for _, str in pairs(ListOfObjects) do
+        if string.match(ds.Name, str) and (ds:IsA("Model") or ds:IsA("BasePart") or ds:IsA("Mesh")) then
+            CollectionService:AddTag(ds, TagToAdd)
+            break
+        end
+    end
+end
