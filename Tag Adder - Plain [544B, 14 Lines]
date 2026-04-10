@@ -1,0 +1,14 @@
+--          Variables
+local TagToAdd = "WindShake"
+local CollectionService = game:GetService("CollectionService")
+local ListOfObjects = {"Shrub", "Bush", "Foliage", "Plant", "Flower", "Tree", "Sapling", "Fern", "Grass"}
+
+--          Code
+for i, ds in pairs(game.Workspace:GetDescendants()) do
+    for _, str in pairs(ListOfObjects) do
+        if string.match(ds.Name, str) and (ds:IsA("Model") or ds:IsA("BasePart") or ds:IsA("Mesh")) then
+            CollectionService:AddTag(ds, TagToAdd)
+            break
+        end
+    end
+end
